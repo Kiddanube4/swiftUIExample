@@ -15,7 +15,45 @@ struct ContentView: View {
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
         }
-        .padding()
+        Spacer()
+        VStack
+        {
+            FooterView()
+        }
+       
+    }
+}
+
+struct FooterView:View
+{
+    var body: some View
+    {
+        HStack
+        {
+            VStack
+            {
+                Text("Hello, world!")
+                    .font(.headline)
+                    .foregroundColor(.red)
+                    .bold(true)
+                    .onTapGesture {
+                        print("el basılmadı")
+                    }
+            }
+            VStack
+            {
+                Button {
+                    print("el basıldı")
+                } label: {
+                    Text("el button")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                }.foregroundColor(.red)
+                    .font(.headline.bold())
+                
+
+            }
+        }.padding()
+        
     }
 }
 
